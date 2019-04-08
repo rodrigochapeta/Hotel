@@ -32,6 +32,8 @@ export class SignUpComponent implements OnInit {
       if (res.status) {
         if (res.status === 401) {
           alert("Usuario o contraseña incorrecta");
+        } else if (res.status > 202) {
+          alert("Error al loguear");
         }
       } else {
         this.router.navigate(["/home"]);

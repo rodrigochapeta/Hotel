@@ -15,8 +15,6 @@ export const ROUTES: Routes = [
   { path: "login", component: LoginComponent },
   { path: "contacto", component: GpsComponent },
   { path: "sign-up", component: SignUpComponent },
-
-
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "**", pathMatch: "full", redirectTo: "login" }
 ];
