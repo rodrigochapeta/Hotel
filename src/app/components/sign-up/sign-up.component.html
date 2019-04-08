@@ -1,0 +1,144 @@
+<head>
+  <title>Login Page</title>
+  <!--Made with love by Mutiullah Samim -->
+
+  <!--Bootsrap 4 CDN-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!--Fontawesome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!--Custom styles-->
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-center h-100">
+      <div class="card">
+        <div class="card-header">
+          <h3>Formulario de registro</h3>
+        </div>
+        <div class="card-body">
+
+          <form name="formulario" (ngSubmit)="onSubmit()" #f="ngForm">
+
+            <div class="row mt-5">
+              <!-- left body -->
+              <div class="col-6">
+
+                <!-- name -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control " placeholder="Nombre" name="name" [(ngModel)]="body.nombre">
+                </div>
+
+                <!-- last Name -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control " placeholder="Apellido" name="lastName"
+                    [(ngModel)]="body.apelllido">
+                </div>
+
+
+                <!-- dni (id) -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control " placeholder="DNI" name="id" [(ngModel)]="body.id">
+                </div>
+
+                <!-- Phone -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                  </div>
+                  <input type="tel" class="form-control " placeholder="Telefono" name="telefono"
+                    [(ngModel)]="body.telefono">
+                </div>
+
+                <!-- email -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input type="email" class="form-control " placeholder="Email" name="email" [(ngModel)]="body.email">
+                </div>
+
+                <!-- date -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
+                  </div>
+
+                  <input type="date" class="form-control " name="date">
+                  <label class="label-date"><small>Fecha de Nacimiento (ej: 24/08/1990)</small></label>
+                </div>
+
+
+              </div>
+              <!-- right body -->
+              <div class="col-6">
+
+                <div class="title">
+                  <h5>Datos para inicio de sesión</h5>
+                </div>
+
+                <!-- User -->
+                <div class="input-group form-group pt-3">
+                  <div class="input-group-prepend ">
+                    <span class="input-group-text"><i class="fas fa-user-circle "></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Usuario" name="username"
+                    [(ngModel)]="body.username">
+                </div>
+
+
+                <!-- password -->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                  </div>
+                  <input type="password" class="form-control " placeholder="Contraseña" name="password"
+                    [(ngModel)]="body.password">
+                </div>
+
+                <!-- password repeat-->
+                <div class="input-group form-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                  </div>
+                  <input type="password" class="form-control " placeholder="Repite la contraseña" name="passwordRepeat">
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <div class=" form-group">
+              <input type="submit" value="Registrar" class="btn float-right login_btn">
+            </div>
+          </form>
+
+          <div class="spacex">
+            <div class="d-flex justify-content-center links ">
+              tienes algun problema?<a [routerLink]="['/contacto']">Contactanos</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="card-footer ">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
