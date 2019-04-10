@@ -15,6 +15,7 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { GpsComponent } from './components/shared/gps/gps.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     NavbarComponent,
     SearchComponent,
     GpsComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoadingComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES)],
   providers: [],

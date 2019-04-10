@@ -10,10 +10,12 @@ export class UsersService {
     console.log("Spotify service up");
   }
   getUsers() {
-    this.http.get("/api/Usuario").subscribe(data => console.log("data :", data));
+    this.http
+      .get("http://hotel.test.venga.io/api/Usuario")
+      .subscribe(data => console.log("data :", data));
   }
   createUser(body) {
-    return this.http.post("/api/Usuario", body).pipe(
+    return this.http.post("http://hotel.test.venga.io/api/Usuario", body).pipe(
       map(res => res),
       catchError((error: any) => {
         return of(error);

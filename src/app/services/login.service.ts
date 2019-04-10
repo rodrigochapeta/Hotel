@@ -16,13 +16,15 @@ export class LoginService {
   }
 
   login(body) {
-    return this.http.post("/api/Auth/Login", body, { responseType: "text" }).pipe(
-      map(res => {
-        return res;
-      }),
-      catchError((error: any) => {
-        return of(error);
-      })
-    );
+    return this.http
+      .post("http://hotel.test.venga.io/api/Auth/Login", body, { responseType: "text" })
+      .pipe(
+        map(res => {
+          return res;
+        }),
+        catchError((error: any) => {
+          return of(error);
+        })
+      );
   }
 }

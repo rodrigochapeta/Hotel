@@ -12,11 +12,11 @@ export class SignUpComponent implements OnInit {
   body = {
     id: "",
     username: "",
-    password: "",
-    nombre: "",
-    apelllido: "",
-    email: "",
-    telefono: "",
+    password: "test",
+    nombre: "test",
+    apelllido: "test",
+    email: "test",
+    telefono: "test",
     role: "client",
     estado: "activo"
   };
