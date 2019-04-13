@@ -2,8 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Numans");
 
-html,
-body {
+.body-login {
   background-image: url("https://www.lordabbett.com/content/dam/lordabbett/en/images/topics/Practice-Management/Practice_Management-Concierge-Bell.jpg");
   background-size: cover;
   background-repeat: no-repeat;

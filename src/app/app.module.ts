@@ -11,11 +11,17 @@ import { NavbarComponent } from "./components/shared/navbar/navbar.component";
 import { SearchComponent } from "./components/search/search.component";
 import { ROUTES } from "./app.routes";
 import { HttpClientModule } from "@angular/common/http";
-import { RouterModule } from "@angular/router";
+import { RouterModule, PreloadAllModules } from "@angular/router";
 import { FormsModule } from "@angular/forms";
-import { GpsComponent } from './components/shared/gps/gps.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { LoadingComponent } from './components/shared/loading/loading.component';
+import { GpsComponent } from "./components/shared/gps/gps.component";
+import { SignUpComponent } from "./components/sign-up/sign-up.component";
+import { LoadingComponent } from "./components/shared/loading/loading.component";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { CarouselComponent } from "./components/shared/carousel/carousel.component";
+import { BannerComponent } from "./components/shared/banner/banner.component";
+import { GalleryComponent } from "./components/shared/gallery/gallery.component";
+import { RoomComponent } from "./components/shared/room/room.component";
+import { SpaceComponent } from "./components/shared/space/space.component";
 
 @NgModule({
   declarations: [
@@ -29,9 +35,20 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     SearchComponent,
     GpsComponent,
     SignUpComponent,
-    LoadingComponent
+    LoadingComponent,
+    CarouselComponent,
+    BannerComponent,
+    GalleryComponent,
+    RoomComponent,
+    SpaceComponent
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    NgxSpinnerModule,
+    RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

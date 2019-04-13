@@ -3,22 +3,8 @@
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
-
-.font-text {
-  color: white;
-  font-family: "Ultra", serif;
-}
-
-.room-b {
-  background-image: url("../../../assets/img/banner-room-1.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-
-

@@ -1,6 +1,70 @@
-<p>
-  reserve works!
-</p>
+<!-- <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner> -->
 
 
-<app-loading></app-loading>
+<div class="container-fluid ">
+  <app-banner [text]="'Reserva'" [background]=true [icon]="reserve"></app-banner>
+
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 borde">
+      <form mx-3>
+        <div class="form-group">
+          <label>Tipo de habitación</label>
+          <select class="form-control" id="room_type" onchange="finalCost()">
+            <option value="0" selected>Selecciona la habitación </option>
+            <option value="1"> Estándar </option>
+            <option value="2"> Deluxe </option>
+            <option value="3"> Executive</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cantidad de habitaciones</label>
+          <select class="form-control" id="room_number" onchange="finalCost()">
+            <option value="0"> 0 </option>
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Personas por habitación</label>
+          <select class="form-control" id="person_number" onchange="finalCost()">
+            <option value="0"> 0 </option>
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cantidad de menores de 5 años</label>
+          <select class="form-control" id="child_number" onchange="finalCost()">
+            <option value="0"> 0 </option>
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Media pensión?</label>
+          <select class="form-control" id="res_facilities" onchange="finalCost()">
+            <option value="0" selected> Quieres incluir media pensión? </option>
+            <option value="2"> Si </option>
+            <option value="0"> No </option>
+          </select>
+        </div><br>
+        <div class="form-group">
+          <label>Costo total : </label>
+          <span id="result"
+            style="background-color: rgb(240, 122, 22);color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;">0</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
