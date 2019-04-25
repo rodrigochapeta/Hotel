@@ -11,7 +11,5 @@ export class BannerComponent implements OnInit {
   @Input() public text: boolean;
 
   constructor() {}
-  ngOnInit() {
-    console.log("nombre, text :", this.icon);
-  }
+  ngOnInit() {}
 }

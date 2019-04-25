@@ -6,6 +6,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { GpsComponent } from "./components/shared/gps/gps.component";
 import { ReserveComponent } from "./components/reserve/reserve.component";
 import { SignUpComponent } from "./components/sign-up/sign-up.component";
+import { ContactComponent } from "./components/contact/contact.component";
 
 export const ROUTES: Routes = [
   { path: "home", component: HomeComponent },
@@ -14,6 +15,7 @@ export const ROUTES: Routes = [
   { path: "busqueda", component: SearchComponent },
   { path: "login", component: LoginComponent },
   { path: "contacto", component: GpsComponent },
+  { path: "fotos", component: ContactComponent },
   { path: "sign-up", component: SignUpComponent },
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "**", pathMatch: "full", redirectTo: "login" }

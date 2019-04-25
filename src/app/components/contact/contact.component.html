@@ -1,3 +1,12 @@
-<p>
-  contact works!
-</p>
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="card-columns" *ngIf="!loading">
+  <div class="card-deck " *ngFor="let item of respuesta | paginate: { itemsPerPage: 9, currentPage: pageInit }">
+    <img [src]="item.webformatURL" class="card-img-top img-thumbnail mx-3 my-2 " alt="">
+  </div>
+</div>
+<div>
+  <pagination-controls (pageChange)=" pageInit =$event" class="d-flex justify-content-center">
+  </pagination-controls>
+
+</div>

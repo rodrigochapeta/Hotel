@@ -6,9 +6,7 @@ import { of } from "rxjs";
   providedIn: "root"
 })
 export class UsersService {
-  constructor(private http: HttpClient) {
-    console.log("Spotify service up");
-  }
+  constructor(private http: HttpClient) {}
   getUsers() {
     this.http
       .get("http://hotel.test.venga.io/api/Usuario")

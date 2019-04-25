@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { NgxPaginationModule } from "ngx-pagination";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
@@ -47,6 +47,8 @@ import { SpaceComponent } from "./components/shared/space/space.component";
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
+    NgxPaginationModule,
+
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules })
   ],
   providers: [],

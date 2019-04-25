@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
         }
       } else {
         this.loading = false;
-        console.log("que paso aca");
         // this.router.navigate(["/home"]);
       }
     });

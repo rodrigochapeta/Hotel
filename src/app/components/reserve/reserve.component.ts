@@ -7,7 +7,18 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ["./reserve.component.css"]
 })
 export class ReserveComponent implements OnInit {
-  reserve = "fas fa-list-alt fa-5x";
+  reserveForm = {
+    type: String,
+    quantityRoom: String,
+    personsByRoom: String,
+    childByRoom: Number,
+    nights: Number
+  };
+  quantity = [1, 2, 3, 4, 5];
+  childs = [0, 1, 2, 3];
+  styleRoom = ["Estándar", "Deluxe", "Executive"];
+
+  reserveIcon = "fas fa-list-alt fa-5x";
   constructor(private ngxSpinnerService: NgxSpinnerService) {}
 
   ngOnInit() {
