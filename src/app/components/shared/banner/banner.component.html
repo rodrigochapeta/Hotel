@@ -1,14 +1,14 @@
 <div [ngClass]="{'jumbotron': background===true}" class="jumbotron radius">
-  <div class=" container">
-    <div class=" row  align-items-center  font-text">
+  <div class="container">
+    <div class="row align-items-center font-text">
 
       <!-- text -->
-      <div class="col-10  text-center">
+      <div class="col-sm-12 col-md-10  text-center">
         <h1>{{text}} </h1>
       </div>
 
       <!-- icon -->
-      <div *ngIf="icon != '' " ngclass=" col-2 ">
+      <div *ngIf="icon != '' " class="col-md-2 col-sm-12 text-center">
         <i class="{{icon}}"> </i></div>
     </div>
 

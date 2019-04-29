@@ -1,5 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import localeEs from "@angular/common/locales/es";
+import { CommonModule, registerLocaleData } from "@angular/common";
+registerLocaleData(localeEs, "es-AR");
+
+import { NgModule, LOCALE_ID } from "@angular/core";
 import { NgxPaginationModule } from "ngx-pagination";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
@@ -22,7 +26,44 @@ import { BannerComponent } from "./components/shared/banner/banner.component";
 import { GalleryComponent } from "./components/shared/gallery/gallery.component";
 import { RoomComponent } from "./components/shared/room/room.component";
 import { SpaceComponent } from "./components/shared/space/space.component";
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule
+} from "@angular/material";
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,10 +89,51 @@ import { SpaceComponent } from "./components/shared/space/space.component";
     FormsModule,
     NgxSpinnerModule,
     NgxPaginationModule,
-
+    MatDatepickerModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: "es-AR"
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

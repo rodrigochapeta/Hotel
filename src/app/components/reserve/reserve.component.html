@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-3"></div>
-    <div class="col-6 borde">
+    <div class="col-md-6 col-sm-12  col-12 borde">
       <form mx-3>
 
         <div class="form-group">
@@ -62,6 +62,21 @@
         </div>
 
 
+        <mat-form-field color="warn" class="example-full-width">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="from" color="warn" placeholder="Desde">
+          <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #from color="warn"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field color="warn" class="example-full-width">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="until" color="warn" placeholder="Hasta">
+          <mat-datepicker-toggle matSuffix [for]="until"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #until color="warn"></mat-datepicker>
+        </mat-form-field>
+
+
+        <h1>{{minDate | date}} </h1>
+        <h1>{{maxDate | date}} </h1>
 
 
       </form>

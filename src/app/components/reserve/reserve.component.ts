@@ -17,11 +17,16 @@ export class ReserveComponent implements OnInit {
   quantity = [1, 2, 3, 4, 5];
   childs = [0, 1, 2, 3];
   styleRoom = ["Estándar", "Deluxe", "Executive"];
+  minDate = new Date();
+  maxDate = new Date();
 
   reserveIcon = "fas fa-list-alt fa-5x";
-  constructor(private ngxSpinnerService: NgxSpinnerService) {}
+  constructor(private ngxSpinnerService: NgxSpinnerService) {
+    this.maxDate.setDate(this.minDate.getDate() + 180);
+  }
 
   ngOnInit() {
+    console.log("minDate :", this.minDate);
     /** spinner starts on init */
     this.ngxSpinnerService.show();
 
