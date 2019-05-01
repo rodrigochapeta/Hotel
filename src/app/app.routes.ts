@@ -7,6 +7,7 @@ import { GpsComponent } from "./components/shared/gps/gps.component";
 import { ReserveComponent } from "./components/reserve/reserve.component";
 import { SignUpComponent } from "./components/sign-up/sign-up.component";
 import { ContactComponent } from "./components/contact/contact.component";
+import { ToPdfComponent } from "./components/shared/to-pdf/to-pdf.component";
 
 export const ROUTES: Routes = [
   { path: "home", component: HomeComponent },
@@ -17,6 +18,7 @@ export const ROUTES: Routes = [
   { path: "contacto", component: GpsComponent },
   { path: "fotos", component: ContactComponent },
   { path: "sign-up", component: SignUpComponent },
+  { path: "tp-pdf", component: ToPdfComponent },
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "**", pathMatch: "full", redirectTo: "login" }
 ];

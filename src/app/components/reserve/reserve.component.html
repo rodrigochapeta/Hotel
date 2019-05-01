@@ -4,11 +4,11 @@
   <div class="row">
     <div class="col-3"></div>
     <div class="col-md-6 col-sm-12  col-12 borde">
-      <form mx-3>
+      <form (ngSubmit)="guardar(forma)" #forma="ngForm" mx-3>
 
         <div class="form-group">
           <label>Tipo de habitación</label>
-          <select class="form-control" id="room_type" onchange="finalCost()">
+          <select class="form-control" id="room_type" name="styleRoom" [(ngModel)]="reserveForm.styleRoom">
             <option selected>Selecciona el tipo de habitación </option>
             <option value={{s}} *ngFor="let s of styleRoom"> {{s}} </option>
           </select>
@@ -16,14 +16,14 @@
 
         <div class="form-group">
           <label>Cantidad de habitaciones</label>
-          <select class="form-control" id="room_number" onchange="finalCost()">
+          <select class="form-control" id="room_number" name="quantityByRoom" [(ngModel)]="reserveForm.quantityByRoom">
             <option value={{n}} *ngFor="let n of quantity"> {{n}} </option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Adultos por habitación</label>
-          <select class="form-control" id="person_number" onchange="finalCost()">
+          <select class="form-control" id="person_number" name="adultsByRoom" [(ngModel)]="reserveForm.adultsByRoom">
             <option value={{n}} *ngFor="let n of quantity">{{n}} </option>
 
           </select>
@@ -31,7 +31,7 @@
 
         <div class="form-group">
           <label>Menores por habitación</label>
-          <select class="form-control" id="child_number" onchange="finalCost()">
+          <select class="form-control" id="child_number" name="childByRoom" [(ngModel)]="reserveForm.childByRoom">
             <option value={{n}} *ngFor="let n of childs"> {{n}} </option>
 
           </select>
@@ -39,16 +39,16 @@
 
         <div class="form-group">
           <label>Alguna persona desea media pensión?</label>
-          <select class="form-control" id="res_facilities" onchange="finalCost()">
+          <select class="form-control" id="res_facilities" name="withDinner" [(ngModel)]="reserveForm.withDinner">
             <option selected> Seleccionar </option>
-            <option value="1"> Si </option>
-            <option value="0"> No </option>
+            <option value=true> Si </option>
+            <option value=false> No </option>
           </select>
         </div><br>
 
         <div class="form-group">
           <label>Cuantas Personas con media pensión</label>
-          <select class="form-control" id="res_facilities" onchange="finalCost()">
+          <select class="form-control" id="res_facilities" name="NumberDinner" [(ngModel)]="reserveForm.NumberDinner">
             <option selected> seleccionar la cantidad? </option>
             <option value={{r}} *ngFor="let n of [1,2,3,4,5]"> {{n}} </option>
 
@@ -63,13 +63,15 @@
 
 
         <mat-form-field color="warn" class="example-full-width">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="from" color="warn" placeholder="Desde">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="from" color="warn" placeholder="Desde"
+            name="from" [(ngModel)]="reserveForm.from">
           <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
           <mat-datepicker touchUi #from color="warn"></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field color="warn" class="example-full-width">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="until" color="warn" placeholder="Hasta">
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="until" color="warn" name="until"
+            [(ngModel)]="reserveForm.until" placeholder="Hasta">
           <mat-datepicker-toggle matSuffix [for]="until"></mat-datepicker-toggle>
           <mat-datepicker touchUi #until color="warn"></mat-datepicker>
         </mat-form-field>
@@ -77,8 +79,10 @@
 
         <h1>{{minDate | date}} </h1>
         <h1>{{maxDate | date}} </h1>
-
-
+        <pre>
+          {{reserveForm | json}}
+        </pre>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>

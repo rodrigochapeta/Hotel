@@ -26,7 +26,9 @@ import { BannerComponent } from "./components/shared/banner/banner.component";
 import { GalleryComponent } from "./components/shared/gallery/gallery.component";
 import { RoomComponent } from "./components/shared/room/room.component";
 import { SpaceComponent } from "./components/shared/space/space.component";
+import { ToPdfComponent } from "./components/shared/to-pdf/to-pdf.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -64,6 +66,7 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from "@angular/material";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +84,8 @@ import {
     BannerComponent,
     GalleryComponent,
     RoomComponent,
-    SpaceComponent
+    SpaceComponent,
+    ToPdfComponent
   ],
   imports: [
     BrowserModule,

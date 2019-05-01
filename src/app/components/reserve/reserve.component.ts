@@ -7,13 +7,18 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ["./reserve.component.css"]
 })
 export class ReserveComponent implements OnInit {
-  reserveForm = {
-    type: String,
-    quantityRoom: String,
-    personsByRoom: String,
+  reserveForm: object = {
+    styleRoom: String,
+    quantityByRoom: String,
+    adultsByRoom: String,
     childByRoom: Number,
-    nights: Number
+    nights: Number,
+    withDinner: Boolean,
+    NumberDinner: Number,
+    from: Date,
+    until: Date
   };
+
   quantity = [1, 2, 3, 4, 5];
   childs = [0, 1, 2, 3];
   styleRoom = ["Estándar", "Deluxe", "Executive"];
@@ -25,14 +30,12 @@ export class ReserveComponent implements OnInit {
     this.maxDate.setDate(this.minDate.getDate() + 180);
   }
 
+  guardar(forma: any) {
+    console.log("forma", forma);
+  }
+
   ngOnInit() {
     console.log("minDate :", this.minDate);
     /** spinner starts on init */
-    this.ngxSpinnerService.show();
-
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.ngxSpinnerService.hide();
-    }, 5000);
   }
 }
