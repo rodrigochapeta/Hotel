@@ -7,7 +7,7 @@ import { NgxSpinnerService } from "ngx-spinner";
   styleUrls: ["./reserve.component.css"]
 })
 export class ReserveComponent implements OnInit {
-  reserveForm: object = {
+  reserveForm = {
     styleRoom: String,
     quantityByRoom: String,
     adultsByRoom: String,
