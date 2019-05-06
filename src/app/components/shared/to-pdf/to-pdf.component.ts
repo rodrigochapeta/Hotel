@@ -26,7 +26,6 @@ export class ToPdfComponent implements OnInit {
     html2canvas(this.screen.nativeElement).then(canvas => {
       this.canvas.nativeElement.src = canvas.toDataURL();
       this.downloadLink.nativeElement.href = canvas.toDataURL("image/png");
-      // this.downloadLink.nativeElement.download = "marble-diagram.png";
       doc.addImage(this.downloadLink.nativeElement.href, "png", 10, 40, 180, 60);
       doc.save("marble-diagram.pdf");
     });

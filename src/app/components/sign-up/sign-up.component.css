@@ -7,8 +7,11 @@ body {
   background-image: url("https://www.lordabbett.com/content/dam/lordabbett/en/images/topics/Practice-Management/Practice_Management-Concierge-Bell.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
   font-family: "Numans", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .container {
@@ -84,4 +87,9 @@ input:focus {
 .label-date {
   color: white;
   text-align: center;
+}
+
+.background {
+  position: absolute;
+  visibility: hidden;
 }

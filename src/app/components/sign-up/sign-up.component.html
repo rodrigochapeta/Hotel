@@ -14,8 +14,15 @@
   <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
 </head>
 
+
 <body>
-  <div class="container">
+  <app-loading *ngIf="loaded"></app-loading>
+  <div class="background">
+    <img (load)="onLoad()"
+      src="https://www.lordabbett.com/content/dam/lordabbett/en/images/topics/Practice-Management/Practice_Management-Concierge-Bell.jpg"
+      alt="">
+  </div>
+  <div class="container" *ngIf="!loaded">
     <div class="d-flex justify-content-center h-100">
       <div class="card">
         <div class="card-header">

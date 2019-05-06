@@ -20,9 +20,9 @@ export class SignUpComponent implements OnInit {
     role: "client",
     estado: "activo"
   };
+  loaded = true;
 
   submitted = false;
-
   ngOnInit() {}
 
   onSubmit() {
@@ -39,5 +39,9 @@ export class SignUpComponent implements OnInit {
         this.router.navigate(["/home"]);
       }
     });
+  }
+
+  onLoad() {
+    this.loaded = false;
   }
 }

@@ -66,6 +66,7 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from "@angular/material";
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import {
     GalleryComponent,
     RoomComponent,
     SpaceComponent,
-    ToPdfComponent
+    ToPdfComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
