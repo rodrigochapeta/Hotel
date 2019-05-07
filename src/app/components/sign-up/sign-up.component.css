@@ -8,10 +8,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Numans", sans-serif;
-  height: 100vh;
-  width: 100%;
-  background-position: center;
-  background-attachment: fixed;
+  height: 100%;
 }
 
 .container {
@@ -24,7 +21,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   width: 700px;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(0, 0, 0, 0.5) 
 }
 
 .card-header h3 {

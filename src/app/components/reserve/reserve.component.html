@@ -16,7 +16,7 @@
 
         <div class="form-group">
           <label>Cantidad de habitaciones</label>
-          <select class="form-control" id="room_number" name="quantityRoom" [(ngModel)]="reserveForm.quantityByRoom" (click)="update(forma)">
+          <select class="form-control" id="room_number" name="quantityRoom" [(ngModel)]="reserveForm.quantityRoom" (click)="update(forma)">
             <option value={{n}} *ngFor="let n of quantity"> {{n}} </option>
           </select>
         </div>

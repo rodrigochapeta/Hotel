@@ -18,7 +18,7 @@ export const ROUTES: Routes = [
   { path: "contacto", component: GpsComponent },
   { path: "fotos", component: ContactComponent },
   { path: "sign-up", component: SignUpComponent },
-  { path: "tp-pdf", component: ToPdfComponent },
+  { path: "to-pdf", component: ToPdfComponent },
   { path: "", pathMatch: "full", redirectTo: "login" },
   { path: "**", pathMatch: "full", redirectTo: "login" }
 ];

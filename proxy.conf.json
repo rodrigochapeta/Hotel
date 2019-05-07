@@ -1,6 +1,6 @@
 {
-  "/pileta/*": {
-    "target": "http://hotel.test.venga.io",
+  "/api/*": {
+    "target": "http://hoteleeeeeeeeeees.test.venga.io",
     "secure": false,
     "changeOrigin": true
   }
