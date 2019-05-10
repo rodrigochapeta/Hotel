@@ -7,13 +7,13 @@ import { of } from "rxjs";
 })
 export class UsersService {
   constructor(private http: HttpClient) {}
+
   getUsers() {
-    this.http
-      .get("http://hotel.test.venga.io/api/Usuario")
-      .subscribe(data => console.log("data :", data));
+    this.http.get("http://hotel.test.venga.io/api/usuario").subscribe(res => res);
   }
+
   createUser(body) {
-    return this.http.post("http://hotel.test.venga.io/api/Usuario", body).pipe(
+    return this.http.post("http://hotel.test.venga.io/api/usuario", body).pipe(
       map(res => res),
       catchError((error: any) => {
         return of(error);

@@ -1,7 +1,8 @@
 {
   "/api/*": {
-    "target": "http://hoteleeeeeeeeeees.test.venga.io",
+    "target": "http://hotel.test.venga.io/",
     "secure": false,
+    "logLevel": "debug",
     "changeOrigin": true
   }
 }

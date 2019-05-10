@@ -1,88 +1,148 @@
-<div class="container-fluid ">
-  <app-banner [text]="'Reserva'" [background]=true [icon]="reserveIcon"></app-banner>
+<div class="container-fluid">
+  <app-banner [text]="'Reserva'" [background]="true" [icon]="reserveIcon"></app-banner>
 
   <div class="row">
     <div class="col-3"></div>
     <div class="col-md-6 col-sm-12  col-12 borde">
       <form (ngSubmit)="guardar(forma)" #forma="ngForm" mx-3>
-
-
         <div class="form-group">
           <label>Tipo de habitación</label>
-          <select class="form-control" id="room_type" name="styleRoom" [(ngModel)]="reserveForm.styleRoom">
-            <option value={{s}} *ngFor="let s of styleRoom"> {{s}} </option>
+          <select
+            class="form-control"
+            id="room_type"
+            name="styleRoom"
+            [(ngModel)]="reserveForm.styleRoom"
+          >
+            <option value="{{ s }}" *ngFor="let s of styleRoom"> {{ s }} </option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Cantidad de habitaciones</label>
-          <select class="form-control" id="room_number" name="quantityRoom" [(ngModel)]="reserveForm.quantityRoom" (click)="update(forma)">
-            <option value={{n}} *ngFor="let n of quantity"> {{n}} </option>
+          <select
+            class="form-control"
+            id="room_number"
+            name="quantityRoom"
+            [(ngModel)]="reserveForm.quantityRoom"
+            (click)="update(forma)"
+          >
+            <option value="{{ n }}" *ngFor="let n of quantity"> {{ n }} </option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Adultos por habitación</label>
-          <select class="form-control" id="person_number" name="adultsByRoom" [(ngModel)]="reserveForm.adultsByRoom" (click)="update(forma)">
-            <option value={{n}} *ngFor="let n of quantity">{{n}} </option>
-
+          <select
+            class="form-control"
+            id="person_number"
+            name="adultsByRoom"
+            [(ngModel)]="reserveForm.adultsByRoom"
+            (click)="update(forma)"
+          >
+            <option value="{{ n }}" *ngFor="let n of quantity">{{ n }} </option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Menores por habitación</label>
-          <select class="form-control" id="child_number" name="childByRoom" [(ngModel)]="reserveForm.childByRoom"(click)="update(forma)">
-            <option value={{n}} *ngFor="let n of childs"> {{n}} </option>
-
+          <select
+            class="form-control"
+            id="child_number"
+            name="childByRoom"
+            [(ngModel)]="reserveForm.childByRoom"
+            (click)="update(forma)"
+          >
+            <option value="{{ n }}" *ngFor="let n of childs"> {{ n }} </option>
           </select>
         </div>
 
         <div class="form-group">
           <label>Alguna persona desea media pensión?</label>
-          <select class="form-control" id="res_facilities" name="withDinner" (click)="calculate(forma)"
-            [(ngModel)]="reserveForm.withDinner">
+          <select
+            class="form-control"
+            id="res_facilities"
+            name="withDinner"
+            (click)="withDinner(forma)"
+            [(ngModel)]="reserveForm.withDinner"
+          >
             <option value="true"> Si </option>
             <option value="false"> No </option>
           </select>
-        </div><br>
+        </div>
+        <br />
 
         <div class="form-group" *ngIf="showDinner">
           <label>Cuantas Personas con media pensión</label>
-          <select class="form-control" id="res_facilities" name="NumberDinner" [(ngModel)]="reserveForm.NumberDinner">
-            <option value={{n}} *ngFor="let n of arrayDinner"> {{n}} </option>
-
+          <select
+            class="form-control"
+            id="res_facilities"
+            name="numberDinner"
+            [(ngModel)]="reserveForm.numberDinner"
+          >
+            <option value="{{ n }}" *ngFor="let n of arrayDinner"> {{ n }} </option>
           </select>
-        </div><br>
-
-        <div class="form-group">
-          <label>Costo total : </label>
-          <span id="result"
-            style="background-color: rgb(240, 122, 22);color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;">0</span>
         </div>
+        <br />
 
+        <!-- date Picker -->
+        <div
+          class="
+          text-center"
+        >
+          <mat-form-field color="warn" class="border border-light p-2">
+            <input
+              matInput
+              [min]="minDate"
+              [max]="maxDate"
+              [matDatepicker]="from"
+              color="warn"
+              placeholder="Desde"
+              name="from"
+              [(ngModel)]="reserveForm.from"
+            />
+            <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #from color="warn"></mat-datepicker>
+          </mat-form-field>
 
-        <mat-form-field color="warn" class="example-full-width">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="from" color="warn" placeholder="Desde"
-            name="from" [(ngModel)]="reserveForm.from">
-          <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
-          <mat-datepicker touchUi #from color="warn"></mat-datepicker>
-        </mat-form-field>
+          <mat-form-field color="warn" class="border border-light p-2">
+            <input
+              matInput
+              [min]="minDate"
+              [max]="maxDate"
+              [matDatepicker]="until"
+              color="warn"
+              name="until"
+              [(ngModel)]="reserveForm.until"
+              placeholder="Hasta"
+            />
+            <mat-datepicker-toggle matSuffix [for]="until"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #until color="warn"></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <!-- / date Picker -->
+        <div class="cotizar mt-4">
+          <button class="btn btn-outline-info text-center" (click)="calculate(forma, reserveForm)">
+            Cotizar Reserva
+          </button>
+        </div>
+        <!-- total cost  -->
 
-        <mat-form-field color="warn" class="example-full-width">
-          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="until" color="warn" name="until"
-            [(ngModel)]="reserveForm.until" placeholder="Hasta">
-          <mat-datepicker-toggle matSuffix [for]="until"></mat-datepicker-toggle>
-          <mat-datepicker touchUi #until color="warn"></mat-datepicker>
-        </mat-form-field>
-
-
+        <div class="form-group cost text-center" *ngIf="reserveForm.cost > 0">
+          <span
+            id="result"
+            style="background-color: rgb(240, 122, 22);color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;"
+            >Costo total : ${{ reserveForm.cost }}</span
+          >
+          <!-- / total Cost -->
+        </div>
 
         <pre>
         <small>{{reserveForm | json}}</small>
         </pre>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="reserveForm.cost > 0" class="reservar">
+          <button type="submit" class="btn btn-primary btn-block">Reservar</button>
+        </div>
       </form>
     </div>
   </div>
-
 </div>

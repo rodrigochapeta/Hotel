@@ -12,13 +12,13 @@ export class SignUpComponent implements OnInit {
   body = {
     id: "",
     username: "",
-    password: "test",
-    nombre: "test",
-    apelllido: "test",
-    email: "test",
-    telefono: "test",
-    role: "client",
-    estado: "activo"
+    password: "",
+    nombre: "",
+    apelllido: "",
+    email: "",
+    telefono: "",
+    role: "",
+    estado: ""
   };
   loaded = true;
 
@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
         if (res.status === 401) {
           alert("Usuario o contraseña incorrecta");
         } else if (res.status > 202) {
-          alert("Error al loguear");
+          alert("Error al registrar");
         }
       } else {
         this.router.navigate(["/home"]);

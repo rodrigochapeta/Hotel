@@ -66,7 +66,9 @@ import {
   MatTooltipModule,
   MatTreeModule
 } from "@angular/material";
-import { FooterComponent } from './components/shared/footer/footer.component';
+import { FooterComponent } from "./components/shared/footer/footer.component";
+import { ProfileComponent } from "./components/profile/profile.component";
+import { ModalComponent } from "./components/shared/modal/modal.component";
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     RoomComponent,
     SpaceComponent,
     ToPdfComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -134,6 +138,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules })
   ],
+  entryComponents: [BannerComponent, ModalComponent],
+
   providers: [
     {
       provide: LOCALE_ID,

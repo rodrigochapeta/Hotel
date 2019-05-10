@@ -3,13 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Numans");
 
 .body-login {
-  background-image: url("https://www.lordabbett.com/content/dam/lordabbett/en/images/topics/Practice-Management/Practice_Management-Concierge-Bell.jpg");
+  background-image: url("../../../assets/img/login.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   font-family: "Numans", sans-serif;
 }
-
 .container {
   height: 100%;
   align-content: center;

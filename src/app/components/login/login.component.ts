@@ -25,12 +25,15 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     return this.loginService.login(this.body).subscribe(res => {
       if (res.status) {
-        if (res.status === 401) {
+        if (res.status !== 200) {
           alert("Usuario o contraseña incorrecta");
         }
       } else {
         this.loading = false;
-        // this.router.navigate(["/home"]);
+        const token = res.password;
+        this.loginService.setToken(token);
+        this.loginService.setUser(res);
+        this.router.navigate(["/perfil"]);
       }
     });
   }
