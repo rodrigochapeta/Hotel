@@ -1,4 +1,10 @@
 # Hotel
+Angular App para el trabajo integratorio de Web 2
+
+Miembros: 
+Chapeta Rodrigo
+French Christian
+Martinez Luciano
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
