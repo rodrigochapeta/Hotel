@@ -127,7 +127,7 @@
         </div>
         <!-- total cost  -->
 
-        <div class="form-group cost text-center" *ngIf="reserveForm.cost > 0">
+        <div class="form-group cost text-center" *ngIf="reserveForm.cost">
           <span
             id="result"
             style="background-color: rgb(240, 122, 22);color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;"
@@ -139,7 +139,7 @@
         <pre>
         <small>{{reserveForm | json}}</small>
         </pre>
-        <div *ngIf="reserveForm.cost > 0" class="reservar">
+        <div *ngIf="reserveForm.cost" class="reservar">
           <button type="submit" class="btn btn-primary btn-block" (click)="reserve()">
             Reservar
           </button>
