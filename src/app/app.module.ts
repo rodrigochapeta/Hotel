@@ -69,6 +69,7 @@ import {
 import { FooterComponent } from "./components/shared/footer/footer.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { ModalComponent } from "./components/shared/modal/modal.component";
+import { AddressComponent } from "./components/shared/address/address.component";
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { ModalComponent } from "./components/shared/modal/modal.component";
     ToPdfComponent,
     FooterComponent,
     ProfileComponent,
-    ModalComponent
+    ModalComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

@@ -1,86 +1,60 @@
 <div class="btn btn-primary" (click)="downloadImage()">Imprimir PDF</div>
 
 <div class="container-fluid px-2" #screen>
-
   <div class="row">
-
     <div class="col-8">
       <div class="row">
+        <ul class="col-6 list-group list-group-flush">
+          <h1 class="reserva">Reserva</h1>
 
-        <h1 class="col-12 reserva">Reserva</h1>
-
-        <ul class="col-8 list-group list-group-flush">
           <li class="list-group-item">
             <h3>Nro: 4343434</h3>
           </li>
           <li class="list-group-item">
-            <h5>Email: lucho@gmail.com</h5>
+            <h5>Email: {{ user.email }}</h5>
           </li>
           <li class="list-group-item">
-            <H5>Reserva de: Luciano Martinez</H5>
+            <H5>Reserva de: {{ user.apelllido | titlecase }} {{ user.nombre | titlecase }}</H5>
           </li>
           <li class="list-group-item">
-            <H5>Fecha de reserva: 30 de abril 2019</H5>
+            <H5>Fecha de reserva: {{ today | date }}</H5>
           </li>
         </ul>
-        <img class="col-4 float-left qr" src={{urlQr}} alt="">
-
+        <img class="col-6 float-left qr" src="{{ urlQr }}" alt="" />
 
         <div class="col-4 jumbotron">
           <h1 class="display-4">Check In</h1>
-          <p class="lead">30 de mayo 2019.</p>
-          <hr class="my-4">
+          <p class="dateCheck">{{ reserve.from | date }}.</p>
+          <hr class="my-4" />
           <p>Horario de ingreso: desde las 14hs</p>
         </div>
         <div class="col-4 jumbotron">
           <h1 class="display-4">Check Out</h1>
-          <p class="lead">13 de junio 2019.</p>
-          <hr class="my-4">
+          <p class="dateCheck">{{ reserve.until | date }}</p>
+          <hr class="my-4" />
           <p>Horario de egreso: hasta las 10hs</p>
         </div>
         <div class="col-4 jumbotron">
           <h1 class="mat-display-1">Detalle</h1>
-          <p class="lead">Habitación: Deluxe</p>
-          <p class="lead">Nro de habitaciones: 4</p>
-          <p class="lead">Adultos: 10</p>
-          <p class="lead">Menores: 4</p>
-          <p class="lead">personas con media pensión: 8</p>
-
-
+          <p class="lead">Tipo de habitación: {{ reserve.styleRoom }}</p>
+          <p class="lead">Nro de habitaciones: {{ reserve.quantityRoom }}</p>
+          <p class="lead">Adultos: {{ reserve.adultsByRoom }}</p>
+          <p class="lead">Menores: {{ reserve.childByRoom }}</p>
+          <p class="lead">personas con media pensión: {{ reserve.numberDinner }}</p>
         </div>
-
       </div>
     </div>
-
-
 
     <div class="col-4 row">
-
-      <img class="col-12 logo" src={{logo}} alt="">
-      <div class="col-12 ">
-
-        <p class="lead">Telefono: 3512237192</p>
-        <p class="lead">mail: info@hotelduraznito.com</p>
-
-
-      </div>
-      <img src="assets/img/maps.png" alt="">
-
+      <img class="img-thumbnail map" src="assets/img/maps.png" alt="" />
+      <app-address> </app-address>
     </div>
-
   </div>
 
-
-  <p class="terms">{{terminos}}</p>
-
-
+  <p class="terms">{{ terminos }}</p>
 </div>
 
-
-
-
-
 <div id="download">
-  <img #canvas>
+  <img #canvas />
   <a #downloadLink></a>
 </div>

@@ -25,7 +25,7 @@
             name="quantityRoom"
             [(ngModel)]="reserveForm.quantityRoom"
             (click)="update(forma)"
-          >
+            >∂
             <option value="{{ n }}" *ngFor="let n of quantity"> {{ n }} </option>
           </select>
         </div>
@@ -140,9 +140,12 @@
         <small>{{reserveForm | json}}</small>
         </pre>
         <div *ngIf="reserveForm.cost > 0" class="reservar">
-          <button type="submit" class="btn btn-primary btn-block">Reservar</button>
+          <button type="submit" class="btn btn-primary btn-block" (click)="reserve()">
+            Reservar
+          </button>
         </div>
       </form>
     </div>
   </div>
+  <app-to-pdf *ngIf="print" [reserve]="reserveForm"> </app-to-pdf>
 </div>

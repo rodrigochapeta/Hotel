@@ -1,14 +1,18 @@
-import { Component, ElementRef, ViewChild, OnInit } from "@angular/core";
+import { Component, ElementRef, ViewChild, OnInit, Input } from "@angular/core";
 import jsPDF from "jspdf";
 import * as html2canvas from "html2canvas";
 import QRCode from "qrcode";
-
+import { LoginService } from "../../../services/login.service";
 @Component({
   selector: "app-to-pdf",
   templateUrl: "./to-pdf.component.html",
   styleUrls: ["./to-pdf.component.css"]
 })
 export class ToPdfComponent implements OnInit {
+  user: any;
+  today = Date();
+  @Input() public reserve: any;
+
   urlQr: string;
   logo = "../../../../assets/img/logo.png";
   terminos =
@@ -16,18 +20,25 @@ export class ToPdfComponent implements OnInit {
   @ViewChild("screen") screen: ElementRef;
   @ViewChild("canvas") canvas: ElementRef;
   @ViewChild("downloadLink") downloadLink: ElementRef;
-  constructor() {
+
+  constructor(private loginService: LoginService) {
+    this.user = this.loginService.getCurrentUser();
+    console.log(this.user, this.today, "jndkljsnfjklndkjfndsklnfkdsnfkdnkfdsnklfdsnfklsdnklfndlk");
     this.generateQr();
   }
 
   downloadImage() {
     console.log("this.urlQr :", this.urlQr);
-    const doc = new jsPDF();
+
+    const doc = new jsPDF("p", "mm", "a4");
     html2canvas(this.screen.nativeElement).then(canvas => {
+      const width = doc.internal.pageSize.getWidth();
+      const height = doc.internal.pageSize.getHeight() * 0.4;
+
       this.canvas.nativeElement.src = canvas.toDataURL();
-      this.downloadLink.nativeElement.href = canvas.toDataURL("image/png");
-      doc.addImage(this.downloadLink.nativeElement.href, "png", 10, 40, 180, 60);
-      doc.save("marble-diagram.pdf");
+      this.downloadLink.nativeElement.href = canvas.toDataURL("image/pdf", 1.0);
+      doc.addImage(this.downloadLink.nativeElement.href, "pdf", 2, 5, width, height);
+      doc.save("reserva.pdf");
     });
   }
 
