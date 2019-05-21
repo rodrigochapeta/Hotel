@@ -27,13 +27,15 @@ export class LoginComponent implements OnInit {
       if (res.status) {
         if (res.status !== 200) {
           alert("Usuario o contraseña incorrecta");
+        } else {
+          this.loading = false;
+          const token = res.body.password;
+          this.loginService.setToken(token);
+          this.loginService.setUser(res.body);
+          this.router.navigate(["/perfil"]);
         }
       } else {
-        this.loading = false;
-        const token = res.password;
-        this.loginService.setToken(token);
-        this.loginService.setUser(res);
-        this.router.navigate(["/perfil"]);
+        alert("Ocurrio un error en la conexión");
       }
     });
   }

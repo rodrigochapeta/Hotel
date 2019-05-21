@@ -17,14 +17,16 @@ export class LoginService {
   }
 
   login(body) {
-    return this.http.post("http://hotel.test.venga.io/api/Auth/Login", body).pipe(
-      map(res => {
-        return res;
-      }),
-      catchError((error: any) => {
-        return of(error);
-      })
-    );
+    return this.http
+      .post("https://hotel.test.venga.io/api/Auth/Login", body, { observe: "response" })
+      .pipe(
+        map(res => {
+          return res;
+        }),
+        catchError((error: any) => {
+          return of(error);
+        })
+      );
   }
 
   setToken(token): void {

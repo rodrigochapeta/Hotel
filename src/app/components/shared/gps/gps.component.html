@@ -1,113 +1,113 @@
-<!--Section: Contact v.1-->
-<section class="section pb-5">
-  <!--Section heading-->
-  <app-banner [text]="'Encontranos'" [background]="true" [icon]="phone"></app-banner>
-  <!--Section description-->
-  <p class="section-description pb-4">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure
-    provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur
-    accusamus veniam.
-  </p>
+<div class="container-fluid">
+  <section class="section pb-5">
+    <!--Section heading-->
+    <app-banner [text]="'Encontranos'" [background]="true" [icon]="phone"></app-banner>
+    <!--Section description-->
+    <p class="section-description pb-4">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure
+      provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur
+      accusamus veniam.
+    </p>
 
-  <div class="row">
-    <!--Grid column-->
-    <div class="col-lg-5 mb-4">
-      <!--Form with header-->
-      <div class="card">
-        <div class="card-body">
-          <!--Header-->
-          <div class="form-header blue accent-1">
-            <h3><i class="fas fa-envelope"></i> Escribenos</h3>
-          </div>
-
-          <p>Te responderemos lo mas rapido posible !</p>
-          <br />
-
-          <!--Body-->
-          <div class="md-form">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="form-name" class="form-control" />
-            <label for="form-name">Nombre y apellido</label>
-          </div>
-
-          <div class="md-form">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="text" id="form-email" class="form-control" />
-            <label for="form-email">Email</label>
-          </div>
-
-          <div class="md-form">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="text" id="form-email" class="form-control" />
-            <label for="form-tel">Teléfono</label>
-          </div>
-
-          <div class="md-form">
-            <i class="fas fa-tag prefix grey-text"></i>
-            <input type="text" id="form-Subject" class="form-control" />
-            <label for="form-Subject">Asunto</label>
-          </div>
-
-          <div class="md-form">
-            <i class="fas fa-pencil-alt prefix grey-text"></i>
-            <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
-            <label for="form-text">Tu consulta</label>
-          </div>
-
-          <div class="text-center mt-4">
-            <button class="btn btn-outline-primary">Submit</button>
-          </div>
-        </div>
-      </div>
-      <!--Form with header-->
-    </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
     <div class="row">
-      <div class="col-md-12 center-align">
-        <!--Google map-->
-        <div
-          id="map-container-google-11"
-          class="z-depth-1-half map-container-5"
-          style="height: 500"
-        >
-          <div class="mapouter">
-            <div class="gmap_canvas">
-              <iframe
-                width="600"
-                height="450"
-                id="gmap_canvas"
-                src="https://maps.google.com/maps?q=-32.165572%2C%20-64.776167&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-              ></iframe>
+      <!--Grid column-->
+      <div class="col-lg-5 mb-4">
+        <!--Form with header-->
+        <div class="card">
+          <div class="card-body">
+            <!--Header-->
+            <div class="form-header blue accent-1">
+              <h3><i class="fas fa-envelope"></i> Escribenos</h3>
             </div>
-            <style>
-              .mapouter {
-                position: relative;
-                text-align: right;
-                height: 450px;
-                width: 600px;
-              }
 
-              .gmap_canvas {
-                overflow: hidden;
-                background: none !important;
-                height: 450px;
-                width: 600px;
-              }
-            </style>
+            <p>Te responderemos lo mas rapido posible !</p>
+            <br />
+
+            <!--Body-->
+            <div class="md-form">
+              <i class="fas fa-user prefix grey-text"></i>
+              <input type="text" id="form-name" class="form-control" />
+              <label for="form-name">Nombre y apellido</label>
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <input type="text" id="form-email" class="form-control" />
+              <label for="form-email">Email</label>
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <input type="text" id="form-email" class="form-control" />
+              <label for="form-tel">Teléfono</label>
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-tag prefix grey-text"></i>
+              <input type="text" id="form-Subject" class="form-control" />
+              <label for="form-Subject">Asunto</label>
+            </div>
+
+            <div class="md-form">
+              <i class="fas fa-pencil-alt prefix grey-text"></i>
+              <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
+              <label for="form-text">Tu consulta</label>
+            </div>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-outline-primary">Submit</button>
+            </div>
           </div>
         </div>
-
-        <br />
-        <app-address> </app-address>
+        <!--Form with header-->
       </div>
       <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="row">
+        <div class="col-md-12 center-align">
+          <!--Google map-->
+          <div
+            id="map-container-google-11"
+            class="z-depth-1-half map-container-5"
+            style="height: 500"
+          >
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  width="600"
+                  height="450"
+                  id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=-32.165572%2C%20-64.776167&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                ></iframe>
+              </div>
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  height: 450px;
+                  width: 600px;
+                }
+
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 450px;
+                  width: 600px;
+                }
+              </style>
+            </div>
+          </div>
+
+          <br />
+          <app-address> </app-address>
+        </div>
+        <!--Grid column-->
+      </div>
     </div>
-  </div>
-</section>
-<!--Section: Contact v.1-->
+  </section>
+</div>

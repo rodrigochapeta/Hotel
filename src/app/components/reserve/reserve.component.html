@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <app-banner [text]="'Reserva'" [background]="true" [icon]="reserveIcon"></app-banner>
 
-  <div class="row">
+  <div class="row" *ngIf="!done">
     <div class="col-3"></div>
     <div class="col-md-6 col-sm-12  col-12 borde">
       <form (ngSubmit)="guardar(forma)" #forma="ngForm" mx-3>
@@ -59,10 +59,10 @@
         <div class="form-group">
           <label>Alguna persona desea media pensión?</label>
           <select
+            (change)="changeSelected($event.target.value, forma)"
             class="form-control"
             id="res_facilities"
             name="withDinner"
-            (click)="withDinner(forma)"
             [(ngModel)]="reserveForm.withDinner"
           >
             <option value="true"> Si </option>
@@ -139,7 +139,7 @@
         <pre>
         <small>{{reserveForm | json}}</small>
         </pre>
-        <div *ngIf="reserveForm.cost" class="reservar">
+        <div *ngIf="reserveForm.cost > 0" class="reservar">
           <button type="submit" class="btn btn-primary btn-block" (click)="reserve()">
             Reservar
           </button>

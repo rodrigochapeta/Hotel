@@ -11,6 +11,7 @@ import { UserInterface } from "src/app/models/user-interface";
   styleUrls: ["./reserve.component.css"]
 })
 export class ReserveComponent implements OnInit {
+  done = false;
   people: any;
   user: UserInterface;
   quantity = [1, 2, 3, 4, 5];
@@ -25,16 +26,16 @@ export class ReserveComponent implements OnInit {
   print = false;
 
   reserveForm = {
-    styleRoom: String,
-    quantityRoom: Number,
-    adultsByRoom: Number,
-    childByRoom: Number,
-    withDinner: String,
-    numberDinner: Number,
-    nights: Number,
-    from: Date,
-    until: Date,
-    cost: Number
+    styleRoom: "",
+    quantityRoom: 0,
+    adultsByRoom: 0,
+    childByRoom: 0,
+    withDinner: "",
+    numberDinner: 0,
+    nights: 0,
+    from: "",
+    until: "",
+    cost: 0
   };
 
   reserveIcon = "fas fa-list-alt fa-5x";
@@ -66,6 +67,12 @@ export class ReserveComponent implements OnInit {
     } else {
       this.showDinner = false;
     }
+  }
+
+  changeSelected(value, forma) {
+    this.update(forma);
+    console.log(value);
+    this.showDinner = value === "true" ? true : false;
   }
 
   calculate(forma, reserveForm) {
@@ -103,6 +110,7 @@ export class ReserveComponent implements OnInit {
         console.log("status", res);
       }
     });
+    this.done = true;
     console.log(this.reserveForm);
   }
   ngOnInit() {

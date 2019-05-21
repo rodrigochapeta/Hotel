@@ -19,6 +19,9 @@
           <li class="list-group-item">
             <H5>Fecha de reserva: {{ today | date }}</H5>
           </li>
+          <li class="list-group-item">
+            <H5>Costo Total a pagar en el hotel: ${{ reserve.cost }}</H5>
+          </li>
         </ul>
         <img class="col-6 float-left qr" src="{{ urlQr }}" alt="" />
 

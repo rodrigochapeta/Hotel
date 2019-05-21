@@ -1,14 +1,16 @@
 <div class="container-fluid">
-  <app-banner [icon]="imageRoom" [background]="true" [text]="'Hotel Duraznito'"></app-banner>
   <app-carousel></app-carousel>
+  <app-banner [icon]="imageRoom" [background]="true" [text]="'Nuestras habitaciones'"></app-banner>
 
   <app-room></app-room>
 
   <div class="jumbotron">
-    <app-banner [icon]="imageGallery" [text]="'Galería de fotos'"></app-banner>
+    <app-banner [icon]="imageGallery" [text]="'Instalaciones'"></app-banner>
 
     <app-space></app-space>
     <app-gallery></app-gallery>
-    <app-space></app-space>
+    <div class="text-center font-text">
+      <h3><a [routerLink]="['/fotos']">Ver Galeria de fotos</a></h3>
+    </div>
   </div>
 </div>
