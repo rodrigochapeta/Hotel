@@ -13,7 +13,9 @@ export class ContactComponent implements OnInit {
   constructor(private imagesService: ImagesService) {
     this.imagesService.getImages().subscribe(res => {
       this.respuesta = res;
-      this.loading = false;
+      setTimeout(() => {
+        this.loading = false;
+      }, 1000);
     });
   }
 

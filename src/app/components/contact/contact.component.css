@@ -1,0 +1,10 @@
+.image {
+  box-sizing: content-box;
+  height: 300px;
+  width: 100%;
+  margin: 20px;
+  box-shadow: 1px 1px 14px black;
+}
+
+.photo {
+}

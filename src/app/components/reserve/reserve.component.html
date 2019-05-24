@@ -98,6 +98,7 @@
               color="warn"
               placeholder="Desde"
               name="from"
+              (dateChange)="changeDate(forma, reserveForm)"
               [(ngModel)]="reserveForm.from"
             />
             <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
@@ -107,7 +108,7 @@
           <mat-form-field color="warn" class="border border-light p-2">
             <input
               matInput
-              [min]="minDate"
+              [min]="minDateFrom"
               [max]="maxDate"
               [matDatepicker]="until"
               color="warn"

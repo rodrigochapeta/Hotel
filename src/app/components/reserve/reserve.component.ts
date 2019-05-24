@@ -19,8 +19,14 @@ export class ReserveComponent implements OnInit {
   styleRoom = ["Estándar", "Deluxe", "Executive"];
   costRoom = 0;
   day = 1000 * 60 * 60 * 24;
+  today = 0;
+  nextDay = 0;
+
   minDate = new Date();
   maxDate = new Date();
+  minDateFrom = new Date();
+  maxDateUntil = new Date();
+
   showDinner = false;
   arrayDinner: number[];
   print = false;
@@ -42,6 +48,8 @@ export class ReserveComponent implements OnInit {
   constructor(private reserveService: ReserveService, private loginService: LoginService) {
     this.user = this.loginService.getCurrentUser();
     this.maxDate.setDate(this.minDate.getDate() + 180);
+    this.today = this.minDate.getTime() + this.day;
+    this.minDateFrom = new Date(this.today);
     this.people = [0, 1];
   }
 
@@ -50,7 +58,6 @@ export class ReserveComponent implements OnInit {
   }
 
   update(forma) {
-    console.log("forma :sdsdnskdndsnjksdnjk");
     if (!isNaN(forma.value.adultsByRoom + forma.value.childByRoom + forma.value.quantityRoom)) {
       this.people =
         forma.value.quantityRoom *
@@ -71,8 +78,11 @@ export class ReserveComponent implements OnInit {
 
   changeSelected(value, forma) {
     this.update(forma);
-    console.log(value);
     this.showDinner = value === "true" ? true : false;
+  }
+  changeDate(forma) {
+    this.nextDay = forma.value.from.getTime() + this.day;
+    this.minDateFrom = new Date(this.nextDay);
   }
 
   calculate(forma, reserveForm) {
@@ -98,8 +108,6 @@ export class ReserveComponent implements OnInit {
       forma.value.cost = this.costRoom * this.people * reserveForm.nights;
       reserveForm.cost = this.costRoom * this.people * reserveForm.nights;
     }
-    console.log("after ", forma.value.cost);
-    console.log("reserveForm : after", reserveForm.cost);
   }
   reserve() {
     const body = { usuario: this.user, reserva: this.reserveForm };
@@ -107,14 +115,11 @@ export class ReserveComponent implements OnInit {
     this.print = true;
     this.reserveService.createreserve(body).subscribe(res => {
       if (res.status) {
-        console.log("status", res);
       }
     });
     this.done = true;
-    console.log(this.reserveForm);
   }
   ngOnInit() {
     /** spinner starts on init */
-    // console.log("people :" + this.people);
   }
 }
